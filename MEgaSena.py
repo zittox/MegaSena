@@ -1,7 +1,7 @@
 import random
 import time
 
-perg = input("Vc quer fazer um jogo da MEGAENA de quantos numeros?\ndigite 6, 7 ,8 ou 9: ")
+perg = input("Vc quer jogo da MEGA SENA de quantos numeros?\ndigite 6, 7 ,8 ou 9: ")
 
 
 def jogo():
