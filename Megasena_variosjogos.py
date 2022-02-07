@@ -52,18 +52,20 @@ class Mega:
     def perg2(self):
 
         while True:
-            self.numjog = int(input(f"Quantos jogos você gostaria de ter com {self.quantinum} números?\n"))
+            self.numjog = input(f"Quantos jogos você gostaria de ter com {self.quantinum} números?\n")
             try:
-
+                self.numjog = int(self.numjog)
                 if self.numjog > 100:
-                    print("O máximo são 100 jogadas <<<--------")
+                    print("\n6O máximo são 100 jogadas <<<--------\n")
+                    self.perg2()
                 elif self.numjog >= 1 and self.numjog <= 100:
                     print(f"\n~~~~>> Você escolheu  {self.numjog} jogos\n")
-
+                break
             except ValueError:
-                print("Digite umnúmero")
-            break
-        return int(self.numjog)
+                print("\n!!!!! >>>> PRESTENÇÃO: digite um número entre 1 e 100 <<<< !!!!\n")
+                self.perg2()
+
+            return self.numjog
 
 
 
