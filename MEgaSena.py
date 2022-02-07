@@ -5,7 +5,7 @@ import time
 def jogo():
     sair = False
     while not sair:
-        perg = input("Vc quer jogo da MEGA SENA de quantos numeros?\ndigite 6, 7 ,8 ou 9: ")
+        perg = input("você quer jogo da MEGA SENA de quantosnúmeros?\ndigite 6, 7 ,8 ou 9: ")
         if perg == "6":
             l6 = random.sample(range(1, 61), 6)
             l6.sort()
