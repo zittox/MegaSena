@@ -5,35 +5,35 @@ import time
 def jogo():
     sair = False
     while not sair:
-        perg = input("você quer jogo da MEGA SENA de quantosnúmeros?\ndigite 6, 7 ,8 ou 9: ")
+        perg = input("\n\nQuantos números tem o jogo da MEGA SENA que você quer?\ndigite uma opção: 6, 7, 8 ou 9\n")
         if perg == "6":
             l6 = random.sample(range(1, 61), 6)
             l6.sort()
             print("\ncalculando~~└[∵┌]└[ ∵ ]┘[┐∵]┘")
             time.sleep(1)
             print(l6)
-            sair = pergunta_sim_nao("\nOutro jogo?")
+            sair = pergunta_sim_nao("\nGostaria de outro jogo?")
         if perg == "7":
             l7 = random.sample(range(1, 61), 7)
             l7.sort()
             print("\ncalculando~~└[∵┌]└[ ∵ ]┘[┐∵]┘")
             time.sleep(1)
             print(l7)
-            sair = pergunta_sim_nao("\nOutro jogo?")
+            sair = pergunta_sim_nao("\nGostaria de outro jogo?")
         if perg == "8":
             l8 = random.sample(range(1, 61), 8)
             l8.sort()
             print("\ncalculando~~└[∵┌]└[ ∵ ]┘[┐∵]┘")
             time.sleep(1)
             print(l8)
-            sair = pergunta_sim_nao("\nOutro jogo?")
+            sair = pergunta_sim_nao("\nGostaria de outro jogo?")
         if perg == "9":
             l9 = random.sample(range(1, 61), 9)
             l9.sort()
             print("\ncalculando~~└[∵┌]└[ ∵ ]┘[┐∵]┘")
             time.sleep(1)
             print(l9)
-            sair = pergunta_sim_nao("\nOutro jogo?")
+            sair = pergunta_sim_nao("\nGostaria de outro jogo?")
 
 
 def pergunta_sim_nao(mensagem):
