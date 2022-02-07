@@ -1,2 +1,2 @@
 # MegaSena
-Gerador aleatório de apostas da MegaSena com 6,7,8 ou 9números
+Gerador aleatório de apostas da MegaSena com 6, 7, 8 ou 9 números
