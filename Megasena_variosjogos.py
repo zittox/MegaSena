@@ -56,7 +56,7 @@ class Mega:
             try:
                 self.numjog = int(self.numjog)
                 if self.numjog > 100:
-                    print("\n6O máximo são 100 jogadas <<<--------\n")
+                    print("\nO máximo são 100 jogadas <<<--------\n")
                     self.perg2()
                 elif self.numjog >= 1 and self.numjog <= 100:
                     print(f"\n~~~~>> Você escolheu  {self.numjog} jogos\n")
