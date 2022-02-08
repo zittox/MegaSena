@@ -95,6 +95,4 @@ class Mega:
 
 Mega.pergunta_sim_nao(" ~~~~~~ Bem vindo __/\__\nGostaria de fazer jogo(s) da Mega Sena?")
 
-
-
-
+# Linha de teste.
