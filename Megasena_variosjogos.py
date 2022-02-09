@@ -63,10 +63,13 @@ class Mega:
             cls.numjog = input(f"Quantos jogos você gostaria de ter com {cls.quantinum} números?\n")
             try:
                 cls.numjog = int(cls.numjog)
+                if cls.numjog == 0:
+                    print("\n!!!!! >>>> ZERO jogadas não é um número válido neh, tenta de novo! <<<< !!!!\n")
+                    cls.perg2()
                 if cls.numjog > 100:
                     print("\nO máximo são 100 jogadas <<<--------\n")
                     cls.perg2()
-                elif 1 <= cls.numjog <= 100:
+                elif cls.numjog >= 1 and cls.numjog <= 100:
                     print(f"\n~~~~>> Você escolheu {cls.numjog} jogos\n")
                 break
             except ValueError:
