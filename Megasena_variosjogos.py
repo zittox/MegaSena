@@ -4,12 +4,12 @@
 import random
 import time
 
-class Mega:
 
+class Mega:
     quantinum = int()
     numjog = int()
 
-    def __init__(self,numjog,quantinum):
+    def __init__(self, numjog, quantinum):
         self.numjog = numjog
         self.quantinum = quantinum
 
@@ -39,21 +39,21 @@ class Mega:
 
     @classmethod
     def perg1(self):
-         while True:
-            self.quantinum = input("\nQuantos números tem o jogo da MEGA SENA que você quer?\ndigite uma opção: 6, 7, 8 ou 9\n")
+        while True:
+            self.quantinum = input(
+                "\nQuantos números tem o jogo da MEGA SENA que você quer?\ndigite uma opção: 6, 7, 8 ou 9\n")
             try:
                 self.quantinum = int(self.quantinum)
                 if self.quantinum == 6 or self.quantinum == 7 or self.quantinum == 8 or self.quantinum == 9:
                     print(f"\n~~~~>> Você escolheu ter {self.quantinum} números em cada jogo ----~!~~!~~!\n")
                     break
-                elif self.quantinum != range(6,10):
+                elif self.quantinum != range(6, 10):
                     print("\n!!!!! >>>> Escolha um número entre 6 e 9 <<<< !!!")
                     self.perg1()
             except ValueError:
                 print("\n!!!!! >>>> PRESTENÇÃO: escolha um número <<<< !!!!")
                 self.perg1()
             return self.quantinum
-
 
     @classmethod
     def perg2(self):
@@ -65,7 +65,7 @@ class Mega:
                 if self.numjog > 100:
                     print("\nO máximo são 100 jogadas <<<--------\n")
                     self.perg2()
-                elif self.numjog >= 1 and self.numjog <= 100:
+                elif 1 <= self.numjog <= 100:
                     print(f"\n~~~~>> Você escolheu {self.numjog} jogos\n")
                 break
             except ValueError:
@@ -83,7 +83,7 @@ class Mega:
             if resposta not in ("s", "n"):
                 print("\nPor favor, digite sim \"s\" ou não \"n\"")
             elif resposta == "n":
-                print("\n_/\_ Boa sorte!\n >>>>> Até a próxima!!!")
+                print("\n__ Boa sorte!\n >>>>> Até a próxima!!!")
                 break
             else:
                 self.perg1()
@@ -91,8 +91,4 @@ class Mega:
                 self.mostra_jogo()
 
 
-
-
-Mega.pergunta_sim_nao(" ~~~~~~ Bem vindo __/\__\nGostaria de fazer jogo(s) da Mega Sena?")
-
-# Linha de teste.
+Mega.pergunta_sim_nao(" ~~~~~~ Bem vindo ____\nGostaria de fazer jogo(s) da Mega Sena?")
