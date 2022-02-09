@@ -1,5 +1,6 @@
 # MEGA SENA ____  Gerador aleatório de jogos
 # por: github.com/zittox
+# colaborador: github.com/ozzysp
 
 import random
 import time
