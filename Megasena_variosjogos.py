@@ -2,9 +2,9 @@
 # por: github.com/zittox
 # colaborador: github.com/ozzysp
 
-import random
-import time
 
+import time
+import qrandom
 
 class Mega:
     quantinum = int()
@@ -16,26 +16,28 @@ class Mega:
 
     @classmethod
     def mostra_jogo(cls):
-        jogo = [random.sample(range(1, 61), cls.quantinum) for _ in range(cls.numjog)]
-        while jogo:
-            for i in jogo:
+        jogo2 = [qrandom.sample(range(1, 61), cls.quantinum) for _ in range(cls.numjog)]
+
+        while jogo2:
+            for i in jogo2:
                 i.sort()
             break
-        jogo.sort()
-        jogox = ""
-        while jogo:
-            for i in jogo:
+        jogo2.sort()
+
+        jogox2 = ""
+        while jogo2:
+            for i in jogo2:
                 i.sort()
-                jogox = "\n".join(str(i) for i in jogo)
+                jogox2 = "\n".join(str(i) for i in jogo2)
             break
 
         if cls.numjog == 1:
-            print(f'O jogo de {cls.quantinum} números é :\n{jogox}')
+            print(f'O jogo de {cls.quantinum} números é :\n{jogox2}')
             cls.pergunta_sim_nao("Gostaria de continuar?")
         else:
             print(f'Os {cls.numjog} jogos de {cls.quantinum} números são:\n\nCALCULAND0 ~~~~ └[∵┌]└[ ∵ ]┘[┐∵]┘\n')
             time.sleep(2)
-            print(f'{jogox}\n')
+            print(f'{jogox2}\n')
             cls.pergunta_sim_nao("Gostaria de continuar?")
 
     @classmethod
