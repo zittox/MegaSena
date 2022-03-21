@@ -68,7 +68,7 @@ class Mega:
                     break
 
                 if numjog == 1:
-                    print(f'O jogo de {quantinum} números é :\n{jogox2}')
+                    print(f'O jogo de {quantinum} número é :\n{jogox2}')
                     pergunta_sim_nao("Gostaria de continuar?\n")
                 else:
                     print(f'Os {numjog} jogos de {quantinum} números são:\n\nCALCULAND0 ~~~~ └[∵┌]└[ ∵ ]┘[┐∵]┘\n')
