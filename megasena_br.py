@@ -79,7 +79,7 @@ class Mega:
         perg2()
 
 
-class result:
+class Result:
 
     def ultimo_resultado():
         apicaixa = 'https://loteriascaixa-api.herokuapp.com/api/mega-sena/latest'
@@ -150,9 +150,9 @@ def pergunta_sim_nao(menssagem):
             if resp2 == "j":
                 Mega.perg1()
             if resp2 == "r":
-                result.ultimo_resultado()
+                Result.ultimo_resultado()
             if resp2 == "p":
-                result.qual_concurso()
+                Result.qual_concurso()
         else:
            print("\n__ Boa sorte!\n >>>>> Até a próxima!!!")
            break
