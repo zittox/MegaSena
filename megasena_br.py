@@ -78,14 +78,14 @@ class Mega:
                     break
 
                 if numjog == 1:
-                    console.print(f'[bold white on blue]O jogo de {quantinum} número é :\n{jogox2}', justify="center", overflow="fold", style="bold")
+                    console.print(f'[bold white on blue]O jogo de {quantinum} número é :\n{jogox2}', overflow="fold", style="bold")
                     pergunta_sim_nao("Gostaria de continuar?\n")
                 else:
-                    console.print(f'[bold white on blue]Os {numjog} jogos de {quantinum} números são:\n\n', justify="center", overflow="fold", style="bold")
+                    console.print(f'[bold white on blue]Os {numjog} jogos de {quantinum} números são:\n\n', overflow="fold", style="bold")
 
-                    for _ in track(range(numjog), description="CALCULAND0 ~~~~ └[∵┌]└[ ∵ ]┘[┐∵]┘\n", style="cornflower_blue"):
+                    for _ in track(range(numjog), description="CALCULAND0:\n", style="cornflower_blue"):
                         time.sleep(0.1)
-                    console.print(f'{jogox2}\n', justify="center", overflow="fold", style="bold")
+                    console.print(f'{jogox2}\n', overflow="fold", style="bold")
                     pergunta_sim_nao("Gostaria de continuar?\n")
             mostra_jogo()
         perg2()
@@ -105,7 +105,7 @@ class Result:
         if r['premiacoes'][0]['vencedores'] == 0:
             venc = f"Vencedores: Não"
         else:
-            venc = f"Vencedores: {r['premiacoes'][0]['vencedores']}"
+            venc = f"Vencedores: {r['premiacoes'][0]['vencedores']} - {r['estadosPremiados'][0]['cidades'][0]['cidade']}"
         if r['premiacoes'][0]['premio'] == "-":
             prem = f"Premiações: 0"
         else:
@@ -132,7 +132,7 @@ class Result:
                 if r['premiacoes'][0]['vencedores'] == 0:
                     venc = f"Vencedores: Não"
                 else:
-                    venc = f"Vencedores: {r['premiacoes'][0]['vencedores']}"
+                    venc = f"Vencedores: {r['premiacoes'][0]['vencedores']} - {r['estadosPremiados'][0]['cidades'][0]['cidade']}"
                 if r['premiacoes'][0]['premio'] == "-":
                     prem = f"Premiações: 0"
                 else:
