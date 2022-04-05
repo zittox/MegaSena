@@ -4,11 +4,7 @@
 
 
 > 
-### Primeiro setup
-- Fork MegaSena para sua conta do github
-- Clone o repositorio localmente
-- Crive e ative sua virtualenv
-- Instale o reqeuirements.txt
+
 
 >>Usando a api de resultados do [Gustavo Alves](https://github.com/guto-alves/loterias-api)
 ### -->>>>> Contribuições são bem-vindas _/\_
