@@ -7,7 +7,7 @@
 
 
 >
->
+>>### Gracias pelas contribuições [Ozzy](https://github.com/ozzysp) e [Edinho](https://github.com/edinhodiluviano) 
 
->>Usando a api de resultados do [Gustavo Alves](https://github.com/guto-alves/loterias-api)
-### -->>>>> Contribuições são bem-vindas _/\_
+>####Usando a api de resultados do [Gustavo Alves](https://github.com/guto-alves/loterias-api)
+### -->>>>> Contribuições são bem-vindas !
