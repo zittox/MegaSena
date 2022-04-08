@@ -91,7 +91,7 @@ class Result:
 
     def ultimo_resultado():
 
-        apicaixa = 'https://loteriascaixa-api.herokuapp.com/api/mega-sena/latest'
+        apicaixa ='https://loteriascaixa-api.herokuapp.com/api/mega-sena/latest'
         r = requests.get(apicaixa).json()
         data = f"Concurso: {r['concurso']}"
         data1 = f"Data: {r['data']}"
