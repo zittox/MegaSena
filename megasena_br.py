@@ -21,23 +21,19 @@ console = Console()
 
 class Mega:
 
-    def __init__(self, numjog, quantinum):
-            self.numjog = numjog
-            self.quantinum = quantinum
-
     def perg1():
         while True:
             quantinum = console.input("[bold white on blue]\nQuantos números tem o jogo da MEGA SENA que você quer?[/]\n[bold italic red]digite uma opção: 6, 7, 8 ou 9\n")
             try:
                 quantinum = int(quantinum)
-                if quantinum >= 6 < 10:
+                if 6 <= quantinum <= 9:
                     rpri(f"[bold white on blue]\n~~~~>> Você escolheu ter {quantinum} números em cada jogo ----~!~~!~~!\n")
                     break
                 else:
-                    rpri("\n[bold italic red]!!!!! >>>> Escolha um número entre 6 e 9 <<<< !!!")
+                    rpri("\n[bold italic green on red blink]!!!!! >>>> Escolha um número entre 6 e 9 <<<< !!!")
                     Mega.perg1()
             except ValueError:
-                rpri("\n[bold italic red]!!!!! >>>> PRESTENÇÃO: escolha um número <<<< !!!!")
+                rpri("\n[bold italic green on red blink]!!!!! >>>> PRESTENÇÃO: escolha um número <<<< !!!!")
                 Mega.perg1()
             return quantinum
 
@@ -48,16 +44,16 @@ class Mega:
                 try:
                     numjog = int(numjog)
                     if numjog == 0:
-                        rpri("\n[bold italic red]!!!!! >>>> ZERO jogadas não é um número válido neh, tenta de novo! <<<< !!!!\n")
+                        rpri("\n[bold italic green on red blink]!!!!! >>>> ZERO jogadas não é um número válido neh, tenta de novo! <<<< !!!!\n")
                         perg2()
                     if numjog > 100:
-                        rpri("\n[bold italic red]O máximo são 100 jogadas <<<--------\n")
+                        rpri("\n[bold italic green on red blink]O máximo são 100 jogadas <<<--------\n")
                         perg2()
                     elif numjog >= 1 and numjog <= 100:
                         rpri(f"[bold white on blue]\n~~~~>> Você escolheu {numjog} jogos\n")
                     break
                 except ValueError:
-                    rpri("\n[bold italic red]!!!!! >>>> PRESTENÇÃO: digite um número entre 1 e 100 <<<< !!!!\n")
+                    rpri("\n[bold italic green on red blink]!!!!! >>>> PRESTENÇÃO: digite um número entre 1 e 100 <<<< !!!!\n")
                     perg2()
                 return numjog
 
@@ -81,19 +77,17 @@ class Mega:
                     console.print(f'[bold white on blue]O jogo de {quantinum} número é :\n{jogox2}', overflow="fold", style="bold")
                     pergunta_sim_nao("Gostaria de continuar?\n")
                 else:
-                    console.print(f'[bold white on blue]Os {numjog} jogos de {quantinum} números são:\n\n', overflow="fold", style="bold")
+                    console.print(f'[bold white on blue]Os {numjog} jogos de {quantinum} números são:\n\nCALCULANDO:', overflow="fold", style="bold")
 
-                    for _ in track(range(numjog), description="CALCULAND0:\n", style="cornflower_blue"):
+                    for _ in track(range(numjog), description="", style="cornflower_blue"):
                         time.sleep(0.1)
-                    console.print(f'{jogox2}\n', overflow="fold", style="bold")
+                    console.print(f'\n{jogox2}\n', overflow="fold", style="bold")
                     pergunta_sim_nao("Gostaria de continuar?\n")
             mostra_jogo()
         perg2()
 
 
 class Result:
-    def __init__(self):
-        pass
 
     def ultimo_resultado():
 
@@ -105,7 +99,8 @@ class Result:
         if r['premiacoes'][0]['vencedores'] == 0:
             venc = f"Vencedores: Não"
         else:
-            venc = f"Vencedores: {r['premiacoes'][0]['vencedores']} - {r['estadosPremiados'][0]['cidades'][0]['cidade']}"
+            d = [[estado["uf"], estado["vencedores"]] for estado in r["estadosPremiados"]]
+            venc = f"Vencedores: {r['premiacoes'][0]['vencedores']} - {d}"
         if r['premiacoes'][0]['premio'] == "-":
             prem = f"Premiações: 0"
         else:
@@ -132,7 +127,8 @@ class Result:
                 if r['premiacoes'][0]['vencedores'] == 0:
                     venc = f"Vencedores: Não"
                 else:
-                    venc = f"Vencedores: {r['premiacoes'][0]['vencedores']} - {r['estadosPremiados'][0]['cidades'][0]['cidade']}"
+                    d = [[estado["uf"], estado["vencedores"]] for estado in r["estadosPremiados"]]
+                    venc = f"Vencedores: {r['premiacoes'][0]['vencedores']} - {d}"
                 if r['premiacoes'][0]['premio'] == "-":
                     prem = f"Premiações: 0"
                 else:
@@ -166,13 +162,13 @@ def pergunta_sim_nao(menssagem):
     while resposta not in ("s", "n"):
         resposta = console.input(f"[bold white on blue]\n{menssagem}digite: s ou n\n")
         if resposta not in ("s", "n"):
-            console.print("\n[bold italic green on red blink]Voçê tem que usar as letras \"s\" ou \"n\"\n", justify="center")
-            pergunta_sim_nao("Se quiser começar ")
+            console.print("\n[bold italic green on red blink]Voçê tem que usar as letras \"s\" ou \"n\"\n")
+            pergunta_sim_nao("Tenta de novo? ")
         elif resposta == "s":
 
             table = Table(title=' ', style="deep_sky_blue1")
             table.add_column("Opções", style="green1", no_wrap=True)
-            table.add_column("Funções", style="turquoise2", no_wrap=True, justify="center")
+            table.add_column("Funções", style="turquoise2", no_wrap=True)
             table.add_row(" J ", "Fazer jogo(s) da Mega Sena")
             table.add_row(" R ", "Ver o resultado do último concurso")
             table.add_row(" P ", "Pesquisar por número de concurso")
@@ -180,8 +176,8 @@ def pergunta_sim_nao(menssagem):
             resp2 = console.input("[bold white on blue]\nDigite a opção desejada:\n")
 
             if resp2 not in ("j", "r", "p"):
-                console.print("[bold italic green on red blink]\nVoçê tem que usar as letras \"j\", \"r\" ou \"p\":", justify="center")
-                pergunta_sim_nao("Para tentar de novo ")
+                console.print("[bold italic green on red blink]\nVoçê tem que usar as letras \"j\", \"r\" ou \"p\":")
+                pergunta_sim_nao("Tenta de novo? ")
             if resp2 == "j":
                 Mega.perg1()
             if resp2 == "r":
@@ -190,8 +186,8 @@ def pergunta_sim_nao(menssagem):
                 Result.qual_concurso()
 
         else:
-            console.print("[bold green on black]\n__ Boa sorte!\n >>>>> Até a próxima!!!\n\n", justify="full")
-            break
+            console.print("[bold green on black]\n__ Boa sorte!\n >>>>> Até a próxima!!!\n\n")
+            exit()
 
 
 
