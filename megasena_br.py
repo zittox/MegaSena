@@ -96,12 +96,12 @@ class Result:
         data = f"Concurso: {r['concurso']}"
         data1 = f"Data: {r['data']}"
         data2 = f"Dezenas: {r['dezenas']}"
-        if r['premiacoes'][0]['vencedores'] == 0:
+        if r['premiacoes'] == [] or r['premiacoes'][0]['vencedores'] == 0:
             venc = f"Vencedores: Não"
         else:
             d = [[estado["uf"], estado["vencedores"]] for estado in r["estadosPremiados"]]
             venc = f"Vencedores: {r['premiacoes'][0]['vencedores']} - {d}"
-        if r['premiacoes'][0]['premio'] == "-":
+        if r['premiacoes'] == [] or r['premiacoes'][0]['premio'] == "-":
             prem = f"Premiações: 0"
         else:
             prem = f"Premiações: R$ {r['premiacoes'][0]['premio']}"
@@ -124,12 +124,12 @@ class Result:
                 data = f"Concurso: {r['concurso']}"
                 data1 = f"Data: {r['data']}"
                 data2 = f"Dezenas: {r['dezenas']}"
-                if r['premiacoes'][0]['vencedores'] == 0:
+                if r['premiacoes'] == [] or r['premiacoes'][0]['vencedores'] == 0:
                     venc = f"Vencedores: Não"
                 else:
                     d = [[estado["uf"], estado["vencedores"]] for estado in r["estadosPremiados"]]
                     venc = f"Vencedores: {r['premiacoes'][0]['vencedores']} - {d}"
-                if r['premiacoes'][0]['premio'] == "-":
+                if r['premiacoes'] == [] or r['premiacoes'][0]['premio'] == "-":
                     prem = f"Premiações: 0"
                 else:
                     prem = f"Premiações: R$ {r['premiacoes'][0]['premio']}"
@@ -192,8 +192,7 @@ def pergunta_sim_nao(menssagem):
 
 
 
-
-
-pergunta_sim_nao('\n\n~~~~~~ Bem vindo __________\nBora começa?!?!?\n')
+if __name__ == "__main__":
+    pergunta_sim_nao('\n\n~~~~~~ Bem vindo __________\nBora começa?!?!?\n')
 
 
